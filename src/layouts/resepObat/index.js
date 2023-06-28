@@ -25,18 +25,71 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import Table from "examples/Tables/Table";
+import Icon from "@mui/material/Icon";
+import ArgonButton from "components/ArgonButton";
+import { Pagination, Modal, Input, Space, Select } from 'antd';
+import { alignItems } from "@mui/system";
+import React, { useState } from 'react';
+// import type { SelectProps } from 'antd';
 
 // Data
-import authorsTableData from "layouts/tables/data/authorsTableData";
-import projectsTableData from "layouts/tables/data/projectsTableData";
+import dataResepObat from "layouts/resepObat/data/dataResepObat";
 
 function Tables() {
-  const { columns, rows } = authorsTableData;
-  const { columns: prCols, rows: prRows } = projectsTableData;
+  const { columns, rows } = dataResepObat;
+
+  const options: SelectProps['options'] = [];
+
+  for (let i = 10; i < 36; i++) {
+    options.push({
+      label: i.toString(36) + i,
+      value: i.toString(36) + i,
+    });
+  }
+
+  const handleChange = (value: string[]) => {
+    console.log(`selected ${value}`);
+  };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+  const { TextArea } = Input;
 
   return (
     <DashboardLayout>
       <DashboardNavbar />
+      <ArgonButton variant="gradient" color="dark" onClick={showModal}>
+        <Icon sx={{ fontWeight: "bold" }}>add</Icon>
+        Tambah Resep Obat
+      </ArgonButton>
+      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} centered>
+        <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
+          <Select
+            mode="multiple"
+            allowClear
+            style={{ width: '100%' }}
+            placeholder="Pilih Obat"
+            defaultValue={['a10', 'c12']}
+            onChange={handleChange}
+            options={options}
+            size="large"
+          />
+          <Input size="large" placeholder="Pasien" />
+          <TextArea rows={4} />
+        </Space>
+      </Modal>
       <ArgonBox py={3}>
         <ArgonBox mb={3}>
           <Card>
@@ -55,25 +108,11 @@ function Tables() {
             >
               <Table columns={columns} rows={rows} />
             </ArgonBox>
+            <ArgonBox display="flex" justifyContent="end" p={3}>
+              <Pagination defaultCurrent={1} total={50} />
+            </ArgonBox>
           </Card>
         </ArgonBox>
-        <Card>
-          <ArgonBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-            <ArgonTypography variant="h6">Projects table</ArgonTypography>
-          </ArgonBox>
-          <ArgonBox
-            sx={{
-              "& .MuiTableRow-root:not(:last-child)": {
-                "& td": {
-                  borderBottom: ({ borders: { borderWidth, borderColor } }) =>
-                    `${borderWidth[1]} solid ${borderColor}`,
-                },
-              },
-            }}
-          >
-            <Table columns={prCols} rows={prRows} />
-          </ArgonBox>
-        </Card>
       </ArgonBox>
       <Footer />
     </DashboardLayout>

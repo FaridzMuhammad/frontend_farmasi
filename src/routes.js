@@ -35,13 +35,16 @@ Coded by www.creative-tim.com
 
 // Argon Dashboard 2 MUI layouts
 import Dashboard from "layouts/dashboard";
-import Tables from "layouts/tables";
+import DataPasien from "layouts/dataPasien";
 import Billing from "layouts/billing";
 import VirtualReality from "layouts/virtual-reality";
 import RTL from "layouts/rtl";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
+import Obat from "layouts/obat";
+import ResepObat from "layouts/resepObat";
+import Transaksi from "layouts/transaksi";
 
 // Argon Dashboard 2 MUI components
 import ArgonBox from "components/ArgonBox";
@@ -57,65 +60,65 @@ const routes = [
   },
   {
     type: "route",
-    name: "Tables",
-    key: "tables",
-    route: "/tables",
+    name: "Data Pasien",
+    key: "data-pasien",
+    route: "/datapasien",
     icon: (
       <ArgonBox component="i" color="warning" fontSize="14px" className="ni ni-calendar-grid-58" />
     ),
-    component: <Tables />,
+    component: <DataPasien />,
   },
   {
     type: "route",
-    name: "Billing",
-    key: "billing",
-    route: "/billing",
+    name: "Obat",
+    key: "obat",
+    route: "/obat",
     icon: <ArgonBox component="i" color="success" fontSize="14px" className="ni ni-credit-card" />,
-    component: <Billing />,
+    component: <Obat />,
   },
   {
     type: "route",
-    name: "Virtual Reality",
-    key: "virtual-reality",
-    route: "/virtual-reality",
+    name: "Resep Obat",
+    key: "resep-obat",
+    route: "/resepobat",
     icon: <ArgonBox component="i" color="info" fontSize="14px" className="ni ni-app" />,
-    component: <VirtualReality />,
+    component: <ResepObat />,
   },
   {
     type: "route",
-    name: "RTL",
-    key: "rtl",
-    route: "/rtl",
-    icon: <ArgonBox component="i" color="error" fontSize="14px" className="ni ni-world-2" />,
-    component: <RTL />,
+    name: "Transaksi",
+    key: "transaksi",
+    route: "/transaksi",
+    icon: <ArgonBox component="i" color="info" fontSize="14px" className="ni ni-app" />,
+    component: <Transaksi />,
   },
-  { type: "title", title: "Account Pages", key: "account-pages" },
-  {
-    type: "route",
-    name: "Profile",
-    key: "profile",
-    route: "/profile",
-    icon: <ArgonBox component="i" color="dark" fontSize="14px" className="ni ni-single-02" />,
-    component: <Profile />,
-  },
-  {
-    type: "route",
-    name: "Sign In",
-    key: "sign-in",
-    route: "/authentication/sign-in",
-    icon: (
-      <ArgonBox component="i" color="warning" fontSize="14px" className="ni ni-single-copy-04" />
-    ),
-    component: <SignIn />,
-  },
-  {
-    type: "route",
-    name: "Sign Up",
-    key: "sign-up",
-    route: "/authentication/sign-up",
-    icon: <ArgonBox component="i" color="info" fontSize="14px" className="ni ni-collection" />,
-    component: <SignUp />,
-  },
+  // { type: "title", title: "Account Pages", key: "account-pages" },
+  // {
+  //   type: "route",
+  //   name: "Profile",
+  //   key: "profile",
+  //   route: "/profile",
+  //   icon: <ArgonBox component="i" color="dark" fontSize="14px" className="ni ni-single-02" />,
+  //   component: <Profile />,
+  // },
+  // {
+  //   type: "route",
+  //   name: "Sign In",
+  //   key: "sign-in",
+  //   route: "/authentication/sign-in",
+  //   icon: (
+  //     <ArgonBox component="i" color="warning" fontSize="14px" className="ni ni-single-copy-04" />
+  //   ),
+  //   component: <SignIn />,
+  // },
+  // {
+  //   type: "route",
+  //   name: "Sign Up",
+  //   key: "sign-up",
+  //   route: "/authentication/sign-up",
+  //   icon: <ArgonBox component="i" color="info" fontSize="14px" className="ni ni-collection" />,
+  //   component: <SignUp />,
+  // },
 ];
 
 export default routes;

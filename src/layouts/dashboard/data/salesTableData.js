@@ -21,22 +21,25 @@ import BR from "assets/images/icons/flags/BR.png";
 
 const salesTableData = [
   {
-    country: [US, "united state"],
-    sales: 2500,
-    value: "$230,900",
-    bounce: "29.9%",
+    Pasien: "Hadad",
+    Dokter: "Nabil",
+    Diagnosa: "Kanker",
+    Tanggal: "12/12/2021",
+    Status: "Selesai",
   },
   {
-    country: [DE, "germany"],
-    sales: "3.900",
-    value: "$440,000",
-    bounce: "40.22%",
+    Pasien: "Hadad",
+    Dokter: "Nabil",
+    Diagnosa: "Kanker",
+    Tanggal: "12/12/2021",
+    Status: "Selesai",
   },
   {
-    country: [GB, "great britain"],
-    sales: "1.400",
-    value: "$190,700",
-    bounce: "23.44%",
+    Pasien: "Hadad",
+    Dokter: "Nabil",
+    Diagnosa: "Kanker",
+    Tanggal: "12/12/2021",
+    Status: "Selesai",
   },
   { country: [BR, "brasil"], sales: 562, value: "$143,960", bounce: "32.14%" },
 ];

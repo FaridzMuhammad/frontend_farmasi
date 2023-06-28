@@ -62,7 +62,7 @@ function SalesTable({ title, rows }) {
   });
 
   return (
-    <TableContainer sx={{ height: "100%" }}>
+    <TableContainer sx={{ position: "relative", display: "block", height: "100%", overflow: "hidden" }}>
       <Table>
         <TableHead>
           <ArgonBox component="tr" width="max-content" display="block" mb={1.5}>
