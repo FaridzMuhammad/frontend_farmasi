@@ -20,6 +20,7 @@ import { useLocation, NavLink } from "react-router-dom";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
+import medicine from "../icon/medicine.png";
 
 // @mui material components
 import List from "@mui/material/List";
@@ -43,6 +44,10 @@ import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
 import { useArgonController, setMiniSidenav } from "context";
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
+
+  const imgIcon =
+  "https://media.discordapp.net/attachments/855432118723936276/1123977408836546601/medicine.png?width=825&height=825";
+
   const [controller, dispatch] = useArgonController();
   const { miniSidenav, darkSidenav, layout } = controller;
   const location = useLocation();
@@ -119,7 +124,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
 
   return (
     <SidenavRoot {...rest} variant="permanent" ownerState={{ darkSidenav, miniSidenav, layout }}>
-      <ArgonBox pt={3} pb={1} px={4} textAlign="center">
+      <ArgonBox pt={3} pb={1} px={2} textAlign="center">
         <ArgonBox
           display={{ xs: "block", xl: "none" }}
           position="absolute"
@@ -135,16 +140,17 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         </ArgonBox>
         <ArgonBox component={NavLink} to="/" display="flex" alignItems="center">
           {brand && (
-            <ArgonBox component="img" src={brand} alt="Argon Logo" width="2rem" mr={0.25} />
+            <ArgonBox component="img" src={brand} alt="Argon Logo" width="3rem" mr={0.4} mb={0.3} />
           )}
           <ArgonBox
             width={!brandName && "100%"}
             sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
           >
             <ArgonTypography
-              component="h6"
+              component="h1"
               variant="button"
-              fontWeight="medium"
+              fontWeight="bold"
+              position="center"
               color={darkSidenav ? "white" : "dark"}
             >
               {brandName}
@@ -156,7 +162,6 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
       <List>{renderRoutes}</List>
 
       <ArgonBox pt={1} mt="auto" mb={2} mx={2}>
-        <SidenavFooter />
       </ArgonBox>
     </SidenavRoot>
   );

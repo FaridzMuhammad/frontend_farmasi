@@ -33,40 +33,22 @@ import Footer from "layouts/authentication/components/Footer";
 function CoverLayout({ title, description, image, imgPosition, button, children }) {
   return (
     <PageLayout>
-      <ArgonBox mt={1}>
-        <DefaultNavbar
-          action={{
-            type: "external",
-            route: "https://creative-tim.com/product/argon-dashboard-material-ui",
-            label: "Free Download",
-            ...button,
-          }}
-          transparent
-          light
-        />
-      </ArgonBox>
       <ArgonBox
-        width="calc(100% - 2rem)"
-        minHeight="50vh"
         borderRadius="lg"
         mx={2}
         mt={2}
-        mb={8}
+        mb={25}
+        mr={8}
         pt={18}
-        pb={20}
+        pb={18}
         sx={{
-          backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
-            image &&
-            `${linearGradient(
-              rgba(gradients.dark.main, 0.6),
-              rgba(gradients.dark.state, 0.6)
-            )}, url(${image})`,
-          backgroundSize: "cover",
+          backgroundImage: `url(${image})`,
+          backgroundSize: "center",
           backgroundPosition: imgPosition,
           backgroundRepeat: "no-repeat",
         }}
       >
-        <Grid container spacing={3} justifyContent="center" sx={{ textAlign: "center" }}>
+        <Grid container spacing={3} justifyContent="center" mt={10} sx={{ textAlign: "center" }}>
           <Grid item xs={10} lg={4}>
             <ArgonBox mb={1}>
               <ArgonTypography variant="h1" color="white" fontWeight="bold">
@@ -88,7 +70,6 @@ function CoverLayout({ title, description, image, imgPosition, button, children 
           </Grid>
         </Grid>
       </ArgonBox>
-      <Footer />
     </PageLayout>
   );
 }

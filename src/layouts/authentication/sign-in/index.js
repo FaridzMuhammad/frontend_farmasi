@@ -32,7 +32,7 @@ import IllustrationLayout from "layouts/authentication/components/IllustrationLa
 
 // Image
 const bgImage =
-  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg";
+  "https://media.discordapp.net/attachments/855432118723936276/1123977408836546601/medicine.png?width=825&height=825";
 
 function Illustration() {
   const [rememberMe, setRememberMe] = useState(false);
@@ -42,12 +42,8 @@ function Illustration() {
   return (
     <IllustrationLayout
       title="Sign In"
-      description="Enter your email and password to sign in"
       illustration={{
         image: bgImage,
-        title: '"Attention is the new currency"',
-        description:
-          "The more effortless the writing looks, the more effort the writer actually put into the process.",
       }}
     >
       <ArgonBox component="form" role="form">
@@ -57,7 +53,7 @@ function Illustration() {
         <ArgonBox mb={2}>
           <ArgonInput type="password" placeholder="Password" size="large" />
         </ArgonBox>
-        <ArgonBox display="flex" alignItems="center">
+        {/* <ArgonBox display="flex" alignItems="center">
           <Switch checked={rememberMe} onChange={handleSetRememberMe} />
           <ArgonTypography
             variant="button"
@@ -67,7 +63,7 @@ function Illustration() {
           >
             &nbsp;&nbsp;Remember me
           </ArgonTypography>
-        </ArgonBox>
+        </ArgonBox> */}
         <ArgonBox mt={4} mb={1}>
           <ArgonButton color="info" size="large" fullWidth>
             Sign In

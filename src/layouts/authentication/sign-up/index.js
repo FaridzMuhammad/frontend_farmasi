@@ -33,30 +33,21 @@ import Separator from "layouts/authentication/components/Separator";
 
 // Images
 const bgImage =
-  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg";
+  "https://media.discordapp.net/attachments/855432118723936276/1123977408836546601/medicine.png?width=825&height=825";
 
 function Cover() {
   return (
     <CoverLayout
-      title="Welcome!"
-      description="Use these awesome forms to login or create new account in your project for free."
       image={bgImage}
-      imgPosition="top"
-      button={{ color: "dark", variant: "gradient" }}
+      imgPosition="center"
     >
       <Card>
-        <ArgonBox p={3} mb={1} textAlign="center">
-          <ArgonTypography variant="h5" fontWeight="medium">
-            Register with
-          </ArgonTypography>
-        </ArgonBox>
-        <ArgonBox mb={2}>
-          <Socials />
-        </ArgonBox>
-        <ArgonBox px={12}>
-          <Separator />
-        </ArgonBox>
         <ArgonBox pt={2} pb={3} px={3}>
+          <ArgonBox mb={2}>
+          <ArgonTypography variant="h4" color="text" fontWeight="bold">
+            Sign up
+          </ArgonTypography>
+          </ArgonBox>
           <ArgonBox component="form" role="form">
             <ArgonBox mb={2}>
               <ArgonInput placeholder="Name" />
@@ -66,25 +57,6 @@ function Cover() {
             </ArgonBox>
             <ArgonBox mb={2}>
               <ArgonInput type="password" placeholder="Password" />
-            </ArgonBox>
-            <ArgonBox display="flex" alignItems="center">
-              <Checkbox defaultChecked />
-              <ArgonTypography
-                variant="button"
-                fontWeight="regular"
-                sx={{ cursor: "pointer", userSelect: "none" }}
-              >
-                &nbsp;&nbsp;I agree the&nbsp;
-              </ArgonTypography>
-              <ArgonTypography
-                component="a"
-                href="#"
-                variant="button"
-                fontWeight="bold"
-                textGradient
-              >
-                Terms and Conditions
-              </ArgonTypography>
             </ArgonBox>
             <ArgonBox mt={4} mb={1}>
               <ArgonButton variant="gradient" color="dark" fullWidth>

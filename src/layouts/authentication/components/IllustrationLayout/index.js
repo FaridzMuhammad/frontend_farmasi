@@ -30,16 +30,8 @@ import PageLayout from "examples/LayoutContainers/PageLayout";
 function IllustrationLayout({ color, header, title, description, button, illustration, children }) {
   return (
     <PageLayout background="white">
-      <DefaultNavbar
-        action={{
-          type: "external",
-          route: "https://creative-tim.com/product/argon-dashboard-material-ui",
-          label: "Free Download",
-          ...button,
-        }}
-      />
       <Grid container>
-        <Grid item xs={11} sm={8} md={6} lg={4} xl={3} sx={{ mx: "auto" }}>
+        <Grid item xs={1} sm={8} md={6} lg={4} xl={4} sx={{ mx: "auto" }}>
           <ArgonBox display="flex" flexDirection="column" justifyContent="center" height="100vh">
             <ArgonBox pt={3} px={3}>
               {!header ? (
@@ -60,7 +52,7 @@ function IllustrationLayout({ color, header, title, description, button, illustr
             <ArgonBox p={3}>{children}</ArgonBox>
           </ArgonBox>
         </Grid>
-        <Grid item xs={12} lg={6}>
+        <Grid item xs={12} lg={5}>
           <ArgonBox
             display={{ xs: "none", lg: "flex" }}
             flexDirection="column"
@@ -79,12 +71,13 @@ function IllustrationLayout({ color, header, title, description, button, illustr
               component="img"
               src={illustration.image}
               alt="background"
-              width="100%"
-              position="absolute"
+              width="200%"
+              position="center"
               top={0}
               left={0}
+              mb={11}
             />
-            <ArgonBox
+            {/* <ArgonBox
               bgColor={color}
               variant="gradient"
               width="100%"
@@ -93,7 +86,7 @@ function IllustrationLayout({ color, header, title, description, button, illustr
               topl={0}
               left={0}
               opacity={0.7}
-            />
+            /> */}
             <ArgonBox position="relative">
               {illustration.title && (
                 <ArgonBox mt={6} mb={1}>

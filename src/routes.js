@@ -45,6 +45,9 @@ import SignUp from "layouts/authentication/sign-up";
 import Obat from "layouts/obat";
 import ResepObat from "layouts/resepObat";
 import Transaksi from "layouts/transaksi";
+import people from "./examples/icon/people.svg"
+import obat from "./examples/icon/obat.svg"
+import resep from "./examples/icon/resep.svg"
 
 // Argon Dashboard 2 MUI components
 import ArgonBox from "components/ArgonBox";
@@ -55,17 +58,15 @@ const routes = [
     name: "Dashboard",
     key: "dashboard",
     route: "/dashboard",
-    icon: <ArgonBox component="i" color="primary" fontSize="14px" className="ni ni-tv-2" />,
+    icon: <ArgonBox component="i" color="primary" fontSize="15px" className="ni ni-tv-2" />,
     component: <Dashboard />,
   },
   {
     type: "route",
     name: "Data Pasien",
-    key: "data-pasien",
+    key: "datapasien",
     route: "/datapasien",
-    icon: (
-      <ArgonBox component="i" color="warning" fontSize="14px" className="ni ni-calendar-grid-58" />
-    ),
+    icon: <img src={people} alt="people" width="20px" height="20px" />,
     component: <DataPasien />,
   },
   {
@@ -73,15 +74,15 @@ const routes = [
     name: "Obat",
     key: "obat",
     route: "/obat",
-    icon: <ArgonBox component="i" color="success" fontSize="14px" className="ni ni-credit-card" />,
+    icon: <img src={obat} alt="people" width="23px" height="23px" />,
     component: <Obat />,
   },
   {
     type: "route",
     name: "Resep Obat",
-    key: "resep-obat",
+    key: "resepobat",
     route: "/resepobat",
-    icon: <ArgonBox component="i" color="info" fontSize="14px" className="ni ni-app" />,
+    icon: <img src={resep} alt="people" width="20px" height="20px" />,
     component: <ResepObat />,
   },
   {
@@ -89,7 +90,7 @@ const routes = [
     name: "Transaksi",
     key: "transaksi",
     route: "/transaksi",
-    icon: <ArgonBox component="i" color="info" fontSize="14px" className="ni ni-app" />,
+    icon: <ArgonBox component="i" color="info" fontSize="20px" className="ni ni-money-coins" />,
     component: <Transaksi />,
   },
   // { type: "title", title: "Account Pages", key: "account-pages" },
@@ -101,24 +102,24 @@ const routes = [
   //   icon: <ArgonBox component="i" color="dark" fontSize="14px" className="ni ni-single-02" />,
   //   component: <Profile />,
   // },
-  // {
-  //   type: "route",
-  //   name: "Sign In",
-  //   key: "sign-in",
-  //   route: "/authentication/sign-in",
-  //   icon: (
-  //     <ArgonBox component="i" color="warning" fontSize="14px" className="ni ni-single-copy-04" />
-  //   ),
-  //   component: <SignIn />,
-  // },
-  // {
-  //   type: "route",
-  //   name: "Sign Up",
-  //   key: "sign-up",
-  //   route: "/authentication/sign-up",
-  //   icon: <ArgonBox component="i" color="info" fontSize="14px" className="ni ni-collection" />,
-  //   component: <SignUp />,
-  // },
+  {
+    type: "route",
+    name: "Sign In",
+    key: "sign-in",
+    route: "/authentication/sign-in",
+    icon: (
+      <ArgonBox component="i" color="warning" fontSize="14px" className="ni ni-single-copy-04" />
+    ),
+    component: <SignIn />,
+  },
+  {
+    type: "route",
+    name: "Sign Up",
+    key: "sign-up",
+    route: "/authentication/sign-up",
+    icon: <ArgonBox component="i" color="info" fontSize="14px" className="ni ni-collection" />,
+    component: <SignUp />,
+  },
 ];
 
 export default routes;
