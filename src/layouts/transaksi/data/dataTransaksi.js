@@ -41,7 +41,6 @@ function Function({ job, org }) {
 
 const dataTransaksi = {
     columns: [
-        { name: "Pasien", align: "left" },
         { name: "ResepObat", align: "left"},
         { name: "Tanggal", align: "left" },
         { name: "Total", align: "left" },
@@ -50,10 +49,9 @@ const dataTransaksi = {
 
     rows: [
         {
-            Pasien: (<ArgonTypography variant="h6" mb={0.5} pl={2} > Hadad </ArgonTypography>),
-            ResepObat: <ArgonTypography variant="h6" mb={0.5}> Dr. Hadi </ArgonTypography>,
+            ResepObat: <ArgonTypography variant="h6" mb={0.5} pl={2}> Dr. Hadi </ArgonTypography>,
             Tanggal: <ArgonTypography variant="h6" mb={0.5} > Dr. Hadi </ArgonTypography>,
-            Total: <ArgonTypography variant="h6" mb={0.5} pl={2}> Dr. Hadi </ArgonTypography>,
+            Total: <ArgonTypography variant="h6" mb={0.5}> Dr. Hadi </ArgonTypography>,
             Action: (<EditDeleteTransaksi/>),
         },
     ],

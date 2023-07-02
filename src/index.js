@@ -26,6 +26,8 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 
 // react-perfect-scrollbar styles
 import "react-perfect-scrollbar/dist/css/styles.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -34,6 +36,7 @@ root.render(
   <BrowserRouter>
     <ArgonControllerProvider>
       <PerfectScrollbar>
+        <ToastContainer limit={3}/>  
         <App />
       </PerfectScrollbar>
     </ArgonControllerProvider>

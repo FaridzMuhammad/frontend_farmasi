@@ -55,9 +55,15 @@ import {
   setOpenConfigurator,
 } from "context";
 
+import { toast } from "react-toastify";
+
 // Images
 import team2 from "assets/images/team-2.jpg";
 import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
+import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { API_URL } from "examples/constant/data";
+
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
@@ -65,6 +71,17 @@ function DashboardNavbar({ absolute, light, isMini }) {
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator } = controller;
   const [openMenu, setOpenMenu] = useState(false);
   const route = useLocation().pathname.split("/").slice(1);
+  
+
+  //logout function
+
+  const handleLogout = () => {
+    toast("Logged out successfully!")
+    localStorage.removeItem("token");
+    setTimeout(() => {
+      window.location.href = "/sign-in";
+    }, 2000);
+  }
 
   useEffect(() => {
     // Setting the navbar type
@@ -161,32 +178,25 @@ function DashboardNavbar({ absolute, light, isMini }) {
         {isMini ? null : (
           <ArgonBox sx={(theme) => navbarRow(theme, { isMini })}>
             <ArgonBox color={light ? "white" : "inherit"}>
-              <Link to="/authentication/sign-in/basic">
-                {/* <IconButton sx={navbarIconButton} size="small">
-                  <Icon
-                    sx={({ palette: { dark, white } }) => ({
-                      color: light && transparentNavbar ? white.main : dark.main,
-                    })}
-                  >
-                    account_circle
-                  </Icon>
+              
+                <IconButton sx={navbarIconButton} size="small" onClick={handleLogout}>
                   <ArgonTypography
                     variant="button"
                     fontWeight="medium"
                     color={light && transparentNavbar ? "white" : "dark"}
                   >
-                    Sign in
+                    Logout
                   </ArgonTypography>
-                </IconButton> */}
-              </Link>
-              <IconButton
+                </IconButton>
+              
+              {/* <IconButton
                 size="small"
                 color={light && transparentNavbar ? "white" : "dark"}
                 sx={navbarMobileMenu}
                 onClick={handleMiniSidenav}
               >
                 <Icon>{miniSidenav ? "menu_open" : "menu"}</Icon>
-              </IconButton>
+              </IconButton> */}
               {/* <IconButton
                 size="small"
                 color={light && transparentNavbar ? "white" : "dark"}

@@ -75,9 +75,9 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
   }, [dispatch, location]);
 
   // Render all the routes from the routes.js (All the visible items on the Sidenav)
-  const renderRoutes = routes.map(({ type, name, icon, title, key, href, route }) => {
+  const renderRoutes = routes.map(({ type, name, icon, title, key, href, route, layout }) => {
     let returnValue;
-
+    
     if (type === "route") {
       if (href) {
         returnValue = (
@@ -91,6 +91,9 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
           </Link>
         );
       } else {
+        if (layout === "auth") {
+          return null;
+        }
         returnValue = (
           <NavLink to={route} key={key}>
             <SidenavItem name={name} icon={icon} active={key === itemName} />

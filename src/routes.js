@@ -54,44 +54,54 @@ import ArgonBox from "components/ArgonBox";
 
 const routes = [
   {
+    hide: false,
     type: "route",
     name: "Dashboard",
     key: "dashboard",
     route: "/dashboard",
     icon: <ArgonBox component="i" color="primary" fontSize="15px" className="ni ni-tv-2" />,
     component: <Dashboard />,
+    layout: "admin",
   },
   {
+    hide: false,
     type: "route",
     name: "Data Pasien",
     key: "datapasien",
     route: "/datapasien",
     icon: <img src={people} alt="people" width="20px" height="20px" />,
     component: <DataPasien />,
+    layout: "admin",
   },
   {
+    hide: false,
     type: "route",
     name: "Obat",
     key: "obat",
     route: "/obat",
     icon: <img src={obat} alt="people" width="23px" height="23px" />,
     component: <Obat />,
+    layout: "admin",
   },
   {
+    hide: false,
     type: "route",
     name: "Resep Obat",
     key: "resepobat",
     route: "/resepobat",
     icon: <img src={resep} alt="people" width="20px" height="20px" />,
     component: <ResepObat />,
+    layout: "admin",
   },
   {
+    hide: false,
     type: "route",
     name: "Transaksi",
     key: "transaksi",
     route: "/transaksi",
     icon: <ArgonBox component="i" color="info" fontSize="20px" className="ni ni-money-coins" />,
     component: <Transaksi />,
+    layout: "admin",
   },
   // { type: "title", title: "Account Pages", key: "account-pages" },
   // {
@@ -103,6 +113,7 @@ const routes = [
   //   component: <Profile />,
   // },
   {
+    hide : true,
     type: "route",
     name: "Sign In",
     key: "sign-in",
@@ -111,14 +122,17 @@ const routes = [
       <ArgonBox component="i" color="warning" fontSize="14px" className="ni ni-single-copy-04" />
     ),
     component: <SignIn />,
+    layout: "auth",
   },
   {
+    hide : true,
     type: "route",
     name: "Sign Up",
     key: "sign-up",
     route: "/authentication/sign-up",
     icon: <ArgonBox component="i" color="info" fontSize="14px" className="ni ni-collection" />,
     component: <SignUp />,
+    layout: "auth",
   },
 ];
 
